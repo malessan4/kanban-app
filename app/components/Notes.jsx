@@ -1,21 +1,12 @@
 import React from 'react';
-import uuid from 'uuid';
+import Note from './Note';
 
-const notes = [
-    {
-        id: uuid.v4(),
-        task: 'Learn React'
-    },
-
-    {
-        id: uuid.v4(),
-        task: 'Do laundry'
-    }
-];
-
-export default () => (
-    <ul>{notes.map(note =>
-        <li key={note.id}>{note.task}</li>
+export default ({notes, onDelete=() =>{}}) => (
+    <ul>{notes.map(({id, task}) =>
+    <li key={id}>
+        <Note
+            onDelete={onDelete.bind(null,id)}
+            task={task} />
+    </li>
     )}</ul>
 )
-
