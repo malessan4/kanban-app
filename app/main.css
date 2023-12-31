@@ -6,8 +6,9 @@ body {
 
 .add-note{
   background-color: #32a39d;
-
+  font-size: 1.5em;
   border: 1px solid #000000;
+  margin-bottom: 0.7em;
 }
 
 .notes{
@@ -21,13 +22,13 @@ body {
 .note{
   overflow: auto;
 
-  margin-bottom: 0.5em;
+  margin-bottom: 0.9em;
   padding: 0.5em;
 
   background-color: #fdfdfd;
   box-shadow: 0 0 0.3em .03em rgba(0,0,0,.7);
 
-  transition: .6s;
+  transition: .8s;
 }
 
 .note .value {
