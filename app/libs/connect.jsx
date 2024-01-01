@@ -23,9 +23,9 @@ function connect(state = () => {}, actions = {}, target) {
 
             flux.FinalStore.unlisten(this.handleChange);
         }
-        render(){
+        render() {
             const {flux} = this.context;
-            const stores = flux.sotres;
+            const stores = flux.stores;
             const composedStores = composeStores(stores);
             return React.createElement(target,
                 {...Object.assign(

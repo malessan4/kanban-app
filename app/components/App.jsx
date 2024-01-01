@@ -5,6 +5,7 @@ import connect from '../libs/connect';
 
 class App extends React.Component {
     constructor(props) {
+
         super(props);
 
         this.state = {
@@ -84,3 +85,4 @@ render() {
 export default connect(() => ({
     test: 'test'
 }))(App)
+
