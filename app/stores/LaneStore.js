@@ -10,7 +10,7 @@ export default class LaneStore {
             lane.note = lane.note || [];
     
         this.setState({
-            lanes: this.lane.concat(lane)
+            lanes: this.lane.concat(lane) //aca puse "lane" y en el libro dice this.lanes //
         });
         
     }

@@ -6,6 +6,7 @@ import LaneActions from '../actions/LaneActions';
 
 
 const App = ({LaneActions, lanes}) => {
+    console.log('Adding Lane');
     const addLane = () => {
         LaneActions.create({
             id:uuid.v4(),
@@ -15,11 +16,11 @@ const App = ({LaneActions, lanes}) => {
 
     return (
         <div>
-            <button className="add-lane" onClick={addLane}>+</button>
+            <button className="add-lane" onClick={addLane}>+ lane</button>
             <Lanes lanes={lanes} />
         </div>
     );
-
+  
 };
 
 

@@ -35,7 +35,7 @@ const Lane = ({
         <div {...props}>
             <div className='lane-header'>
                 <div className='lane-add-note'>
-                    <button onClick={addNote}>+</button>
+                    <button onClick={addNote}>+ task</button>
                 </div>
                 <div className='lane-name'>{lane.name}</div>
             </div>
