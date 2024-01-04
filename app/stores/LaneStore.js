@@ -1,5 +1,6 @@
 import LaneActions from '../actions/LaneActions';
 
+
 export default class LaneStore {
     constructor() {
         this.bindActions(LaneActions);
@@ -10,7 +11,7 @@ export default class LaneStore {
             lane.note = lane.note || [];
     
         this.setState({
-            lanes: this.lane.concat(lane) //aca puse "lane" y en el libro dice this.lanes //
+            lanes: this.lanes.concat(lane) //aca puse "lane" y en el libro dice this.lanes //
         });
         
     }
