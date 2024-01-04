@@ -1,20 +1,10 @@
-import uuid from 'uuid';
 import NoteActions from '../actions/NoteActions';
 
 export default class NoteStore {
     constructor() {
         this.bindActions(NoteActions);
 
-        this.notes = [
-            {
-                id: uuid.v4(),
-                task: 'Aprender React'
-            },
-            {
-                id: uuid.v4(),
-                task: 'Hacer la Colada'
-            }
-        ];
+        this.notes = [];
     }
 
     create(note){
