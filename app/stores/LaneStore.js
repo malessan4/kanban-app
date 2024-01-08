@@ -1,18 +1,44 @@
 import LaneActions from '../actions/LaneActions';
-
-
 export default class LaneStore {
     constructor() {
         this.bindActions(LaneActions);
-
-        this.lane = [];
-    }
-        create(lane){
-            lane.note = lane.note || [];
-    
-        this.setState({
-            lanes: this.lanes.concat(lane) //aca puse "lane" y en el libro dice this.lanes //
-        });
         
-    }
+        this.lanes = [];
 }
+create(lane) {
+
+    lane.notes = lane.notes || [];
+    this.setState({
+        lanes: this.lanes.concat(lane)
+        });
+    }
+
+    detachFromLane({laneId, noteId}){
+        this.setState({
+            lanes: this.lanes.map(lane => {
+                if(lane.id === laneId){
+                    lane.notes = lane.notes.filter(note => note !== noteId);
+                }
+
+                return lane;
+            })
+        });
+    }
+
+    attachToLane({laneId, noteId}) {
+        this.setState({
+        lanes: this.lanes.map(lane => {
+        if(lane.notes.includes(noteId)) {
+        lane.notes = lane.notes.filter(note => note !== noteId);
+        }
+        if(lane.id === laneId) {
+        lane.notes = lane.notes.concat([noteId]);
+        }
+        return lane;
+        })
+
+
+});
+}
+}
+
