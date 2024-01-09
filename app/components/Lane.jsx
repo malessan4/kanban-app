@@ -18,23 +18,36 @@ const deleteNote = (noteId, e) => {
     LaneActions.detachFromLane({
         laneId: lane.id,
         noteId
-    });
-NoteActions.delete(noteId);
+        });
+    NoteActions.delete(noteId);
 };
+
 const activateNoteEdit = id => {
-NoteActions.update({id, editing: true});
+    NoteActions.update({id, editing: true});
 };
+
 return (
 <div {...props}>
 <LaneHeader lane={lane} />
 <Notes
-    notes={notes}
+    notes={selectNotesByIds(notes, lane.notes)}
     onNoteClick={activateNoteEdit}
     onEdit={editNote}
     onDelete={deleteNote} />
 </div>
 );
 };
+
+function selectNotesByIds(allNotes, noteIds = []) {
+    return noteIds.reduce((notes, id) =>
+    notes.concat(
+        allNotes.filter(note => note.id === id)
+    )
+    , []);
+}
+
+
+
 export default connect(
 
     ({notes}) => ({
